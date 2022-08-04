@@ -1,0 +1,108 @@
+ 
+
+
+.box{
+        /* border: black solid; */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        /* background-color:  red; */
+         /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(129 83 83));  */
+         background-image: url("2.jpg");
+        /* background-image: linear-gradient(to bottom right, red, yellow); */
+      }
+      /* form {
+  padding-top: 100px;
+  padding-right: 300px;
+  padding-bottom: 100px;
+  padding-left: 300px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+} */
+.item{
+  /* padding-top: 100px; */
+  height: 550px;
+  width: 400px;
+  /* border: red solid; */
+  /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(129 83 83)); */
+  box-shadow: 10px 10x;
+  color: rgb(32, 29, 29);
+  
+  
+}
+input,textarea,select,option
+{
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(153, 176, 187));
+  
+}
+
+label
+{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-display:initial;
+  font-weight:500;
+}
+.item1
+{
+  height: 550px;
+  width: 400px;
+  /* border: red solid; */
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(129 83 83));
+  background-repeat: no-repeat;
+  
+  background-image: url('loan2.jpg');
+}
+button{
+  display:inline-block;
+padding:0.3em 1.2em;
+margin:0 0.3em 0.3em 0;
+border-radius:2em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:300;
+color:#e9e4e4;
+background-color:#313334;
+text-align:center;
+transition: all 0.2s;
+}
+
+.heading{
+  margin: auto;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  /* border: solid #333; */
+  /* border-radius: 10px; */
+  background-color:#2b3132;
+}
+
+l {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
