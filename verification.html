@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+       .PAN{
+        text-transform: uppercase;
+       }
+        .error
+        {
+            color: Red;
+           
+        }
+        input[type=text] {
+  width: 100px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+input[type=text]:focus {
+  width: 150px;
+}
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" href={{ url_for('static',filename='styling_page.css')}}>
+    <ul style="list-style-type:none">
+      <li><a href={{ url_for('home')}}>Home</a></li>
+      <li><a href={{ url_for('contact')}}>Contact</a></li>
+      <li><a href={{ url_for('home')}}>About</a></li>
+    </ul>
+    <h2 class="heading">Loan Prediction</h2>
+    <div class="box">
+        
+        <form action="/verification" method="post" class="item">
+          <table>
+            <tr>
+                <td><h2>Verify Your identity....!!!!</h2></td>
+            </tr>
+            <tr>
+                <td>
+                  <label for="adhaar_num">Adhaar Number:</label>
+                </td>
+                <td>
+                    <input name="adhaar_num" type="text" id="adhaar_num"class="PAN" onblur="adhaar_validate(this)" onclick="adhaar_validate2(this)" placeholder="enter 12 digit adhaar number">
+                    <span id="demo1" class="error"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="lblPANCard">PAN Number:</label>
+                </td>
+                <td>
+                    <input name="txtPANCard" type="text" id="txtPANCard" class="PAN" onblur="pan_validate(this)" onclick="pan_validate2(this)" placeholder="enter PAN number">
+                    <span id="demo2" class="error"></span>
+                </td>
+              </tr>
+             
+             
+          </table>
+          <button type="submit" onclick="validate()" >submit</button>
+          <button type="reset">reset</button>
+        </form>
+       
+          <p class="item1">
+            <!-- <img src="loan.jpg"> -->
+          </p>
+      </div>
+      <script>
+        function pan_validate(x)
+        { 
+            
+        var txtPANCard =x.value;
+        var regex = /([A-Z]){5}([0-9]){4}([A-Z]){1}$/;
+        if (regex.test(txtPANCard.toUpperCase())==false) 
+        document.getElementById("demo2").innerHTML="invalid PAN number";
+
+        }
+        function pan_validate2(x)
+        { 
+            
+        var txtPANCard = x.value;
+       
+        document.getElementById("demo2").innerHTML="";
+
+        }
+        function adhaar_validate(x)
+        {
+          var adhaar_num=parseInt(x.value);
+           var reg=/^[2-9]{1}[0-9]{11}$/;
+            //var reg=/[0-9]/;
+            if (reg.test(adhaar_num)==false) 
+            document.getElementById("demo1").innerHTML="invalid adhhar number";
+            if(adhaar_num.length()!=12)
+            document.getElementById("demo1").innerHTML="invalid adhhar number";
+        }
+        function adhaar_validate2(x)
+        {
+          var txt_adhaar_num=parseInt(x.value);
+           
+            document.getElementById("demo1").innerHTML="";
+        }
+        function validate()
+        {
+          //window.open('loan.html',"_blank");
+        }
+      </script>
+</body>
+</html>

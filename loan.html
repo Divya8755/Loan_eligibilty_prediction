@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .error{
+        color: red;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration:solid;
+      }
+     
+input[type=text] {
+  width: 100px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+input[type=text]:focus {
+  width: 150px;
+}
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" href={{ url_for('static',filename='styling_page.css')}}>
+    <ul style="list-style-type:none" >
+      <li><a href={{ url_for('home')}}>Home</a></li>
+      
+      <li><a href={{ url_for('contact')}}>Contact</a></li>
+      <li><a href={{ url_for('home')}}>About</a></li>
+    </ul>
+    <h2 class="heading">Loan Prediction</h2>
+    <div class="box">
+        <form action="/prediction" method="post" class="item" style="box-shadow: 10px 10x;">
+          <table>
+            <tr>
+                <td>
+                  <label for="gender">Gender:</label>
+                </td>
+                <td>
+                  <input type="radio" name="gender" id="gender"  value="1" checked >MALE
+                  <input type="radio" name="gender" id="gender"  value="0">FEMALE
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="marr_status">Married Status:</label>
+                </td>
+                <td>
+                  <input type="radio" name="marr_status" id="marr_status" value="1" checked>Married
+                  <input type="radio" name="marr_status" id="marr_status" value="0">Unmarried
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="bank">Number of dependents in family:</label>
+                </td>
+                <td>
+                  <select name="dependent" id="dependent">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </td>
+              </tr>
+            <tr>
+              <td>
+              Tell About your education??
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="graduation">Are you Graduate?</label>
+              </td>
+              <td>
+                Yes<input type="radio" name="graduation" id="graduationn" value="0" checked>
+              </td>
+              <td>
+                No<input type="radio" name="graduation" id="graduationn" value="1">
+              </td>
+            </tr>
+            <tr>
+                <td>
+                  <label for="employed">Are you Self Employed?</label>
+                </td>
+                <td>
+                  Yes<input type="radio" name="employed" id="employedd" value="1" checked>
+                </td>
+                <td>
+                  No<input type="radio" name="employed" id="employedd" value="0">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="aincome">Applicant Annual income:</label>
+                </td>
+                <td>
+                  <input type="text" name="aincome" id="aincome" onkeydown="aincome_validate2(this)" onkeyup="aincome_validate(this)" placeholder="enter income in digits" required>
+                <span id="demo4" class="error"></span>
+                </td>
+                <td>
+                  <span id="demo" class="error"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="cincome">Co-pplicant Annual income(write 0 if no co-applicant):</label>
+                </td>
+                <td>
+                  <input type="text" name="cincome" id="cincome" onkeydown="cincome_validate2(this)" onkeyup="cincome_validate(this)" placeholder="enter income in digits" required>
+                  <span id="demo1" class="error"></span>
+                </td>
+                
+                
+              </tr>
+              <tr>
+                <td>
+                  <label for="loanamt">Loan Amount</label>
+                </td>
+                <td>
+                  <input type="text" name="loanamt" id="loanamt" id="loanamt" onkeydown="loan_amt_validate2(this)" onkeyup="loan_amt_validate(this)"placeholder="enter loan amount in digits" required>
+                  <span id="demo3" class="error"></span>
+                </td>
+              </tr>
+            <tr>
+              <td>
+                <label for="loanterm">loan term</label>
+              </td>
+              <td>
+                <input type="number" name="loanterm" id="loanterm" onkeydown="loan_term_validate2(this)" onkeyup="loan_term_validate(this)" placeholder="Enter in years" required>
+                <span id="demo2" class="error"></span>
+                
+              </td>
+             
+            </tr>
+            <tr>
+              <td>
+                <label for="credhistory">credit history</label>
+              </td>
+              <td>
+                <select name="credhistory" id="credhistory">
+                  <option value="0">0</option>
+                  <option value="1">10</option>
+                  <option value="2">20</option>
+                  <option value="3">30</option>
+                  <option value="4">40</option>
+                  <option value="5">50</option>
+                  <option value="6">60</option>
+                  <option value="7">70</option>
+                  <option value="8">80</option>
+                  <option value="9">90</option>
+                  <option value="10">100</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="prop_area">Property Area</label></td>
+              <td>
+                <select name="prop_area" id="prop_area">
+                  <option value="0">Rural</option>
+                  <option value="2">Urban</option>
+                  <option value="1">Semi-Urban</option>
+              </td>
+              </select>
+            </tr>
+             
+          </table>
+          <button type="submit" onclick="validate()">submit</button>
+          <button type="reset">reset</button>
+        </form>
+       
+          <p class="item1">
+            <!-- <img src="loan.jpg"> -->
+          </p>
+      </div>
+      <script>
+        function loan_term_validate(t)
+        {
+          var loanterm=parseInt(t.value);
+        
+          if(loanterm<0||loanterm>40)
+         // window.alert("out of bound loan term");
+         document.getElementById("demo2").innerHTML="*out of bound loan term";
+         //else
+         //document.getElementById("demo2").innerHTML="accepted";
+
+        }
+        function loan_term_validate2(t)
+        {
+          var loanterm=parseInt(t.value);
+          //if(loanterm>0||loanterm<40)
+         document.getElementById("demo2").innerHTML="";
+
+
+        }
+        function aincome_validate(t)
+        {
+          var aincome=parseInt(t.value);
+          regex=/[0-9]/;
+          if(regex.test(aincome)==false)
+          document.getElementById("demo4").innerHTML="*only digit is allowed!";
+          if(aincome<0)
+         // window.alert("out of bound loan term");
+         document.getElementById("demo4").innerHTML="*income cannot be negative"
+         if(aincome>70000000)
+         document.getElementById("demo4").innerHTML="*income is too high!"
+        }
+        function aincome_validate2(t)
+        {
+          //var aincome=document.getElementById('aincome').value;
+         document.getElementById("demo4").innerHTML="";
+        }
+        function cincome_validate(t)
+        {
+          var cincome=parseInt(t.value);
+          regex=/[0-9]/;
+          if(regex.test(cincome)==false)
+          document.getElementById("demo1").innerHTML="*only digit is allowed!";
+          if(aincome<0)
+         // window.alert("out of bound loan term");
+         document.getElementById("demo1").innerHTML="*income cannot be negative"
+         if(cincome>70000000)
+         document.getElementById("demo1").innerHTML="*income is too high!"
+        }
+        function cincome_validate2(t)
+        {
+          //var aincome=document.getElementById('aincome').value;
+         document.getElementById("demo1").innerHTML="";
+        }
+        function loan_amt_validate(t)
+        {
+          var cincome=parseInt(t.value);
+          regex=/[0-9]/;
+          if(regex.test(cincome)==false)
+          document.getElementById("demo3").innerHTML="*only digit is allowed!"
+          if(cincome<0)
+         // window.alert("out of bound loan term");
+         document.getElementById("demo3").innerHTML="*income cannot be negative"
+         if(cincome>700000000)
+         document.getElementById("demo3").innerHTML="*income is too high!"
+        }
+        function loan_amt_validate2(t)
+        {
+         document.getElementById("demo3").innerHTML="";
+        }
+        function validate()
+        {
+    
+       // window.alert("Login successfull.. Welcome!!")
+       // window.open("","_blank")
+    
+        }
+      </script>
+</body>
+</html>

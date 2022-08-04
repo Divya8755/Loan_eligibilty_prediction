@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     body {
+    background: url('static/loan3.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+}
+.heading{
+  margin: auto;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(219, 201, 201);
+  font-weight: bold;
+   border: solid #333; 
+   border-radius: 10px; 
+  background-color:#333;
+}
+.heading2{
+  margin: auto;
+  text-align: left;
+  font-size: 30px;
+  color: rgb(14, 20, 53);
+  font-weight: bold;
+   /* border: solid #333;  */
+   /* border-radius: 10px;  */
+  /* background-color:#333; */
+}
+
+l {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(48, 44, 44);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+table
+{
+    border: #111;
+    font-weight: bold;
+   /* border: solid #333;  */
+   border-radius: 10px;
+   background-color: rgb(197, 199, 201);
+}
+
+    </style>
+</head>
+<body>
+    <!-- <link rel="stylesheet" href={{ url_for('static',filename='styling_page.css')}}> -->
+    <ul style="list-style-type:none">
+        <li><a href={{ url_for('home')}}>Home</a></li>
+        
+        <li><a href={{ url_for('contact')}}>Contact</a></li>
+        <li><a href={{ url_for('home')}}>About</a></li>
+      </ul>
+      <h3 class="heading">Get Quick Loan Approvals</h3>
+      <p>
+
+          <div>
+              <h2 class="heading2">SPECIAL HOME LOAN RATES</h2>
+              <div>
+
+                  <h1 class="heading2">Retail Prime Lending Rate: 16.95%</h1>
+              </div>
+          </div>
+      </p>
+      <div>
+      <table border="solid">
+        <thead >
+            <tr>
+                <th>Loan Slab</th>
+                <th>Home Loan Interest Rates (% p.a.)</th>
+            </tr>
+        </thead>
+                <tr>
+                    <td>
+                        For Any Loan amount
+                    </td>
+                    <td>
+                        7.55 - 8.05
+                    </td>
+                </tr>
+           
+       
+      </table>
+      </div>
+    </p>
+      <div>
+        <p>
+
+            <h2 class="heading2">STANDARD LOAN RATES</h2>
+            <div>
+    
+                <h1 class="heading2">Retail Prime Lending Rate: 16.95%</h1>
+            </div>
+        </div>
+        </p>
+
+<table border="solid">
+  <thead >
+      
+          <th>Loan Slab</th>
+          <th>Home Loan Interest Rates (% p.a.)</th>
+     
+  </thead>
+          <tr>
+              <td>
+                For Women* (upto 30 Lakhs)
+              </td>
+              <td>
+                7.65 - 8.15
+              </td>
+          </tr>
+          <tr>
+            <td>
+                For Others* (upto 30 Lakhs)
+            </td>
+            <td>
+                7.70 - 8.20
+            </td>
+        </tr>
+        <tr>
+            <td>
+                For Women* (30.01 Lakhs to 75 Lakhs)
+            </td>
+            <td>
+                7.90 - 8.40
+            </td>
+        </tr>
+        <tr>
+            <td>
+                For Others* (30.01 Lakhs to 75 Lakhs)
+            </td>
+            <td>
+                7.95 - 8.45
+            </td>
+        </tr>
+        <tr>
+            <td>
+                For Women* (75.01 Lakhs & Above)
+            </td>
+            <td>
+                8.00 - 8.50
+            </td>
+        </tr>
+        <tr>
+            <td>
+                For Others*(75.01 Lakhs & Above)
+            </td>
+            <td>
+                8.05 - 8.55
+            </td>
+        </tr>
+ 
+</table>
+</body>
+</html>

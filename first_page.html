@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Eligibility</title>
+    <style>
+      input[type=text] {
+  width: 100px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+input[type=text]:focus {
+  width: 150px;
+}
+
+
+    </style>
+</head>
+<body>
+  <link rel="stylesheet" href={{ url_for('static',filename='styling_page.css')}}>
+  <ul style="list-style-type:none">
+    <li><a href={{ url_for('home')}}>Home</a></li>
+    <li><a href={{ url_for('contact')}}>Contact</a></li>
+    <li><a href={{ url_for('home')}}>About</a></li>
+  </ul>
+  <h2 class="heading">Loan Prediction</h2>
+    <div class="box">
+      <form action="/registeration" method="post" class="item shadow">
+        <table>
+          <tr>
+              <td>
+                <label for="fname">FIRST NAME:</label>
+              </td>
+              <td>
+                <input type="text" name="fname" id="fname" placeholder="enter first name">
+              </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="lname">LAST NAME:</label>
+            </td>
+            <td>
+              <input type="text" name="lname" id="lname" placeholder="enter last name">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="email">EMAIL:</label>
+            </td>
+            <td>
+              <input type="email" name="email" id="email"placeholder="ex: abc@gmail.com">
+            </td>
+            <tr>
+  
+              <td>
+                <label for="phone">PHONE NUMBER:</label>
+              </td>
+              <td>
+                <input type="number" name="phone" id="phone" placeholder="Enter number">
+              </td>
+            </tr>
+            <tr>
+  
+              <td>
+                <label for="dob">DATE OF BIRTH</label>
+              </td>
+              <td>
+                <input type="date" name="dob" id="dob">
+              </td>
+            </tr>
+            <tr>
+              <tr>
+  
+                <td>
+                  <label for="genderr">GENDER:</label>
+                </td>
+                <td>
+                  <input type="radio" name="gender" id="genderr" value="1">MALE
+                  <input type="radio" name="gender" id="genderr" value="0">FEMALE
+                </td>
+              </tr>
+              <td>
+                <label for="pin">PIN CODE:</label>
+              </td>
+              <td>
+                <input type="number" name="pin" id="pin" placeholder="Enter pin code">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="address">ADDRESS:</label>
+              </td>
+              <td>
+                <textarea name="add" id="add" cols="30" rows="5" placeholder="enter some text"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="bank">SELECT BANK:</label>
+              </td>
+              <td>
+                <select name="bank" id="bank">
+                  <option value="SBI">STATE BANK OF INDIA</option>
+                  <option value="pnb">PUNJAB NATIONAL BANK</option>
+                  <option value="hdfc">HDFC</option>
+                  <option value="union">UNION BANK OF INDIA</option>
+                  <option value="axis">AXIS BANK OF INDIA</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+
+            </tr>
+        </table>
+        <button type="submit " onclick="validate()">submit</button>
+        <button type="reset">reset</button>
+      </form>
+     
+        <p class="item1">
+          <!-- <img src="loan.jpg"> -->
+        </p>
+    </div>
+    <script>
+      function validate()
+      {
+        //window.alert("Login successfull.. Welcome!!")
+        //window.open("verification.html","_blank")
+      }
+    </script>
+       
+</body>
+</html>
